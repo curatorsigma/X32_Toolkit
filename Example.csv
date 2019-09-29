@@ -1,0 +1,40 @@
+# Location;# Sublocation;Base;Session name 1;Session name 2
+"Columns starting with # will be ignored. Use them to make your Central Patching File better understandable for humans.
+There may be empty rows without worrying about it.
+A Column ‘Base’ must exist. Every name should be unique and descriptive for what it is used for.";;;;
+Stagebox Stage left;1;VOX_R_F;Bob;Jack
+;2;INST_R_F;Accoustic Gtr;
+;3;VOX_R_B;Jimmy;
+;4;INST_R_B;Piano;
+;5;VOX_MR_F;;Cody
+;6;VOX_ML_F;;
+;7;INST_M_F;;Violin
+;8;RES_1;Backline Reserve;
+;;Kick;Kick;Kick
+;;Boom;Boom;Boom
+;;Snare_1;Snare_1;Snare_1
+;;Snare_2;Snare_2;
+;;Tom_1;Tom_1;Tom_1
+;;Tom_2;Tom_2;Tom_2
+;;Tom_3;Tom_3;Tom_3
+;;HiHat;HiHat;HiHat
+;;EDrums;EDrums;
+;;OH_L;OH_L;OH_L
+;;OH_R;OH_R;OH_R
+;;Click;Click;Click
+;;SP_PRI;;
+;;SP_SEK;;
+;;HS_PRI;;
+;;HS_SEK;;
+;;VOX_L_F;;
+;;INST_L_F;;
+;;VOX_L_B;;
+;;INST_L_B;;
+;;RES_2;;
+;;TB_R_F;;
+;;TB_R_B;;
+;;TB_L;;
+;;TB_MON;;
+;;TB_FoH;;
+;;Beamer;;
+;;Music;;
