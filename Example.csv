@@ -38,3 +38,16 @@ Stagebox Stage left;1;VOX_R_F;Bob;Jack
 ;;TB_FoH;;
 ;;Beamer;;
 ;;Music;;
+AUXINS;;;;
+;;Beamer L;MP3 L;Beamer L
+;;Beamer R;MP3 R;Beamer R
+OUTPUTS;;;;
+;;R_F;Bob;Jack
+;;L_F;;
+;;MR_F;;Cody
+;;ML_F;;
+;;R_B;Jimmy;
+;;L_B;;
+;;Drums;Theo;Theo
+;;IE_RES_1;Backline;
+;;IE_RES_2;;

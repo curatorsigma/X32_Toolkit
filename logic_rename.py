@@ -33,7 +33,7 @@ def rename_in_file(file, rename_dict):
     INPUTS
         string file: existing file.
         dict(string old: string new): what to replace."""
-    # the block size to read ad once
+    # the block size to read at once
     SEARCH_BLOCK_SIZE = 1024 * 16
     with open(file, 'r+b') as f:
         while True:
@@ -112,9 +112,16 @@ def create_named_projects(file, target_dir=None, csv_file=None):
                        for k, v in rename_dict.items() if len(k) > 0}
         # force the new names to be shorter then MAX_NAME_LEN
         rename_dict = {k: v[:MAX_NAME_LEN] for k, v in rename_dict.items()}
-        new_file = shutil.copytree(
-            file,
-            os.path.join(target_dir, f'{base_name}_{session_name}.logicx'))
+        new_file_name = os.path.join(target_dir,
+                                     f'{base_name}_{session_name}.logicx')
+        try:
+            new_file = shutil.copytree(
+                file,
+                new_file_name)
+        except FileExistsError:
+            print(
+                (f'The file {new_file_name} already exists.'))
+            continue
         rename_in_file(os.path.join(new_file, 'Alternatives/000/ProjectData'),
                        rename_dict)
         count += 1
