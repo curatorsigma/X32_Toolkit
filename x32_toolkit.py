@@ -106,7 +106,6 @@ def rename(wip_file, rename_dict, mode):
     fileinput.close()
     status += '\n'.join([f'Failed to find {k} to {v}'
                          for k, v in failed.items()])
-    print(status)
     return status
 
 
