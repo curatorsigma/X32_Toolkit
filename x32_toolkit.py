@@ -66,21 +66,28 @@ def rename(wip_file, rename_dict, mode):
         if m is None:
             print(line, end='')
             continue
+        else:
+            status += "Matched: " + line
+        # get data for the match
+        ch_type = m.group('type')
+        ch_num = m.group('ch_num')
+        ch_name = m.group('name')
+        ch_pic_num = m.group('pic_num')
+        ch_color = m.group('color')
+        # the channel type was not enabled. do not change the line
+        if ch_type not in enabled:
+            print(line, end='')
+            continue
         for name in rename_dict:
-            ch_type = m.group('type')
-            if ch_type not in enabled:
-                continue
-            ch_num = m.group('ch_num')
-            ch_name = m.group('name')
             if ch_name != name:
                 continue
-            ch_pic_num = m.group('pic_num')
-            ch_color = m.group('color')
+            # get the input if an auxin or regular channel was matched
             if ch_type == 'auxin' or ch_type == 'ch':
                 ch_input = m.group('input')
             else:
                 ch_input = ''
-            status += (f'\nCH {m.group("ch_num")}: '
+            status += (f'\n{ch_type.upper()} '
+                       f'{m.group("ch_num")}: '
                        f'{name} -> {rename_dict[name]}')
             if rename_dict[name] is '':
                 status += 'turned OFF.'
@@ -93,9 +100,13 @@ def rename(wip_file, rename_dict, mode):
             print(f'/{ch_type}/{ch_num}/config '
                   f'"{rename_dict[name]}" {ch_pic_num} {ch_color} {ch_input}')
             break
+        else:
+            status += "Did not find the name in rename_dict. not changing"
+            print(line, end='')
     fileinput.close()
     status += '\n'.join([f'Failed to find {k} to {v}'
                          for k, v in failed.items()])
+    print(status)
     return status
 
 
