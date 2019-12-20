@@ -66,8 +66,6 @@ def rename(wip_file, rename_dict, mode):
         if m is None:
             print(line, end='')
             continue
-        else:
-            status += "Matched: " + line
         # get data for the match
         ch_type = m.group('type')
         ch_num = m.group('ch_num')
@@ -90,7 +88,6 @@ def rename(wip_file, rename_dict, mode):
                        f'{m.group("ch_num")}: '
                        f'{name} -> {rename_dict[name]}')
             if rename_dict[name] is '':
-                status += 'turned OFF.'
                 ch_pic_num = '1'
                 ch_color = 'OFF'
                 ch_input = '0'
@@ -101,7 +98,7 @@ def rename(wip_file, rename_dict, mode):
                   f'"{rename_dict[name]}" {ch_pic_num} {ch_color} {ch_input}')
             break
         else:
-            status += "Did not find the name in rename_dict. not changing"
+            # Did not find the name in rename_dict. not changing
             print(line, end='')
     fileinput.close()
     status += '\n'.join([f'Failed to find {k} to {v}'
