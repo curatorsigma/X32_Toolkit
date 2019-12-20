@@ -203,7 +203,7 @@ def batch_rename(wip_file):
     while True:
         try:
             to_rename, new_name = input('Specify "oldname newname". '
-                                        '"c" to quit.\n').split()
+                                        '"c" to quit.\n').split(' ', 1)
         except ValueError:
             break
         rename_dict[to_rename] = new_name
