@@ -13,7 +13,7 @@ X32_Toolkit can also help you move channels around in a regular Scene, preservin
 ```bash
 python session_build.py Example.csv Bases Scenes
 ```
-will create (or override within!!!) a Directory ./Scenes/ and create the Scenes and LOGIC.logicx-files in that directory, according to the manes in ```Example.csv```, using the Scenes and Projects in ```Bases``` as Template.
+will create (or override within!!!) a Directory ./Scenes/ and create the Scenes and LOGIC.logicx-files in that directory, according to the names in ```Example.csv```, using the Scenes and Projects in ```Bases``` as Template.
 
 ```bash
 python x32_toolkit.py scenename.scn
